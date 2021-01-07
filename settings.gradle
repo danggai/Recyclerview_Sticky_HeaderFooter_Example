@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Recyclerview_Sticky_HeaderFooter_Example"
