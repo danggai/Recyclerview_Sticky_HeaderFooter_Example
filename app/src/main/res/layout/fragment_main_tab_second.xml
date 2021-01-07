@@ -8,7 +8,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.recyclerview_sticky_headerfooter_example.ui.main.PageViewModel"
+            type="com.example.recyclerview_sticky_headerfooter_example.ui.main.MainTabViewModel"
             />
     </data>
 

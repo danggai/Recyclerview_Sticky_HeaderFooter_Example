@@ -8,14 +8,15 @@
     <data>
         <variable
             name="vm"
-            type="com.example.recyclerview_sticky_headerfooter_example.ui.main.PageViewModel"
+            type="com.example.recyclerview_sticky_headerfooter_example.ui.main.MainTabViewModel"
             />
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

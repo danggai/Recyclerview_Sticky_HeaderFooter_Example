@@ -6,11 +6,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_sticky_headerfooter_example.R
-import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainTabFirstBinding
-import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainTabSecondBinding
-import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainTabThirdBinding
 
-public class SectionsPagerAdapter2() : RecyclerView.Adapter<SectionsPagerAdapter2.ItemViewHolder>() {
+public class MainPager2Adapter() : RecyclerView.Adapter<MainPager2Adapter.ItemViewHolder>() {
 
     companion object {
         const val itemSize = 3
