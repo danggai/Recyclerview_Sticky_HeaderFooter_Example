@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Round">
+        <item name="android:background">@drawable/rect_box_r100</item>
+    </style>
+</resources>

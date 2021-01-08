@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.recyclerview_sticky_headerfooter_example.ui.main.MainTabViewModel"
+            />
+        <variable
+            name="data"
+            type="com.example.recyclerview_sticky_headerfooter_example.data.local.common.ListItem"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_profile"
+            style="@style/Round"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="4dp"
+            app:srcCompat="@drawable/person_male"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_phone"
+            app:layout_constraintLeft_toRightOf="@+id/iv_profile"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_profile"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

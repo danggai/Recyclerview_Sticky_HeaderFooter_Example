@@ -9,8 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="lightgray">#cccccc</color>
+    <color name="light_gray">#cccccc</color>
     <color name="gray">#aaaaaa</color>
-    <color name="darkgray">#333333</color>
+    <color name="dark_gray">#333333</color>
 
 </resources>

@@ -7,7 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_sticky_headerfooter_example.R
 
-public class MainPager2Adapter() : RecyclerView.Adapter<MainPager2Adapter.ItemViewHolder>() {
+class MainPager2Adapter() : RecyclerView.Adapter<MainPager2Adapter.ItemViewHolder>() {
 
     companion object {
         const val itemSize = 3
@@ -40,10 +40,17 @@ public class MainPager2Adapter() : RecyclerView.Adapter<MainPager2Adapter.ItemVi
         }
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return when (position) {
+            0 -> TYPE_HEADER_ONLY
+            1 -> TYPE_FOOTER_ONLY
+            else -> TYPE_BOTH
+        }
+    }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
-        when (holder.binding) {
+//        when (holder.binding) {
 //            is FragmentMainTabFirstBinding -> {
 //                holder.binding.vm = viewModel
 //            }
@@ -53,12 +60,10 @@ public class MainPager2Adapter() : RecyclerView.Adapter<MainPager2Adapter.ItemVi
 //            is FragmentMainTabThirdBinding -> {
 //                holder.binding.vm = viewModel
 //            }
-        }
+//        }
     }
 
     override fun getItemCount(): Int {
         return itemSize
     }
-
-
 }

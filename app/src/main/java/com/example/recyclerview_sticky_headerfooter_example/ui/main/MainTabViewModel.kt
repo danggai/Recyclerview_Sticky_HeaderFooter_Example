@@ -1,19 +1,13 @@
 package com.example.recyclerview_sticky_headerfooter_example.ui.main
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
+import android.util.Log
+import android.view.View
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import com.example.recyclerview_sticky_headerfooter_example.R
+import com.example.recyclerview_sticky_headerfooter_example.data.local.common.ListItem
 
 class MainTabViewModel : ViewModel() {
 
-    private val _index = MutableLiveData<Int>()
-    val text: LiveData<String> = Transformations.map(_index) {
-        "Hello world from section: $it"
-    }
+    var itemList = mutableListOf<Any>()
 
-    fun setIndex(index: Int) {
-        _index.value = index
-    }
 }

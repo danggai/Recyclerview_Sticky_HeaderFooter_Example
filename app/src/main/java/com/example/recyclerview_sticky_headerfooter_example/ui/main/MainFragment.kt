@@ -43,24 +43,17 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     }
 
     private fun initUI() {
-        val sectionsPagerAdapter = MainPager2Adapter()
-        val viewPager2: ViewPager2 = binding.viewPager2
-        viewPager2.adapter = sectionsPagerAdapter
+        val vp2: ViewPager2 = binding.viewPager2
+        vp2.adapter = MainPager2Adapter()
 
         val tabs: TabLayout = binding.tabs
-        TabLayoutMediator(tabs, viewPager2) { tab, position ->
+        TabLayoutMediator(tabs, vp2) { tab, position ->
             when (position) {
                 0 -> { tab.text = "TAB 1"}
                 1 -> { tab.text = "TAB 2"}
                 2 -> { tab.text = "TAB 3"}
             }
-            viewPager2.setCurrentItem(tab.position, true)
+            vp2.setCurrentItem(tab.position, true)
         }.attach()
-
-        val fab: FloatingActionButton = binding.fab
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 }
