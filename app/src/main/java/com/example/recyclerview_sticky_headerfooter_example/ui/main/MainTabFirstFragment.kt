@@ -1,17 +1,12 @@
 package com.example.recyclerview_sticky_headerfooter_example.ui.main
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.LayoutRes
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_sticky_headerfooter_example.BindingFragment
 import com.example.recyclerview_sticky_headerfooter_example.R
-import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainBinding
 import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainTabFirstBinding
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
@@ -23,6 +18,7 @@ class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
     }
 
     private lateinit var mVM: MainTabViewModel
+    private lateinit var mAdapter: MainTabAdapter
 
     @LayoutRes
     override fun getLayoutResId() = R.layout.fragment_main_tab_first
@@ -35,5 +31,24 @@ class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
         binding.vm?.let {
             mVM = it
         }
+
+        binding.rv.adapter = MainTabAdapter(mVM)
+        mAdapter = binding.rv.adapter as MainTabAdapter
+
+        initUI()
+        initLv()
+    }
+
+    private fun initUI() {
+        mAdapter.clear()
+    }
+
+    private fun initLv() {
+        mVM.addItem.observe(viewLifecycleOwner, Observer {item ->
+            mAdapter.addItem(item)
+        })
+        mVM.addHeader.observe(viewLifecycleOwner, Observer {header ->
+            mAdapter.addItem(header)
+        })
     }
 }
