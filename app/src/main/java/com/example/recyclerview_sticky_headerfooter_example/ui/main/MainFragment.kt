@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.LayoutRes
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
@@ -44,7 +45,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
 
     private fun initUI() {
         val vp2: ViewPager2 = binding.viewPager2
-        vp2.adapter = MainPager2Adapter()
+        vp2.adapter = MainPager2Adapter(this)
 
         val tabs: TabLayout = binding.tabs
         TabLayoutMediator(tabs, vp2) { tab, position ->
