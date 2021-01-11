@@ -24,6 +24,7 @@ class MainTabAdapter(val viewModel: MainTabViewModel) : RecyclerView.Adapter<Mai
     }
 
     private var mDataSet = mutableListOf<Any>()
+    val _mDataSet = mDataSet
 
     fun clear() {
         mDataSet.clear()
@@ -95,5 +96,12 @@ class MainTabAdapter(val viewModel: MainTabViewModel) : RecyclerView.Adapter<Mai
 
     override fun getItemCount(): Int {
         return mDataSet.size
+    }
+
+    fun isHeader(position: Int): Boolean {
+        return when (mDataSet[position]) {
+            is ListHeader -> true
+            else -> false
+        }
     }
 }

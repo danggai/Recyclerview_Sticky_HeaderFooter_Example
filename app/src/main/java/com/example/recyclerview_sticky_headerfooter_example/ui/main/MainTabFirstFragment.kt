@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_sticky_headerfooter_example.BindingFragment
 import com.example.recyclerview_sticky_headerfooter_example.R
 import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainTabFirstBinding
+import com.example.recyclerview_sticky_headerfooter_example.util.StickyHeaderItemDecoration
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
@@ -41,6 +42,13 @@ class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
 
     private fun initUI() {
         mAdapter.clear()
+        binding.rv.addItemDecoration(
+                StickyHeaderItemDecoration(
+                        binding.rv,
+                        { mAdapter.isHeader(it) },
+                        { /*onClick Event*/ }
+                )
+        )
     }
 
     private fun initLv() {
