@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_sticky_headerfooter_example.BindingFragment
 import com.example.recyclerview_sticky_headerfooter_example.R
 import com.example.recyclerview_sticky_headerfooter_example.databinding.FragmentMainTabFirstBinding
@@ -52,11 +51,14 @@ class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
     }
 
     private fun initLv() {
-        mVM.addItem.observe(viewLifecycleOwner, Observer {item ->
+        mVM.lvAddItem.observe(viewLifecycleOwner, Observer { item ->
             mAdapter.addItem(item)
         })
-        mVM.addHeader.observe(viewLifecycleOwner, Observer {header ->
+        mVM.lvAddHeader.observe(viewLifecycleOwner, Observer { header ->
             mAdapter.addItem(header)
+        })
+        mVM.lvClearItems.observe(viewLifecycleOwner, Observer { boolean ->
+            if (boolean) mAdapter.clear()
         })
     }
 }

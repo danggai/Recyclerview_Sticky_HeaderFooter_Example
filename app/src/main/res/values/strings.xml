@@ -5,4 +5,5 @@
     <string name="tab_text_3">Tab 3</string>
     <string name="add_header">ADD HEADER</string>
     <string name="add_item">ADD ITEM</string>
+    <string name="clear_items">CLEAR</string>
 </resources>

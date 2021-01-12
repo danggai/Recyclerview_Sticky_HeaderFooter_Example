@@ -24,25 +24,15 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/v_bottom"
+            app:layout_constraintBottom_toTopOf="@+id/ll_bottom"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            />
-
-        <View
-            android:id="@+id/v_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="#262626"
-            app:layout_constraintBottom_toTopOf="@id/ll_bottom"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             />
 
         <LinearLayout
             android:id="@+id/ll_bottom"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:weightSum="2"
+            android:weightSum="5"
             android:background="#6e6e6e"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -50,10 +40,26 @@
             >
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_btn1"
+                android:id="@+id/tv_btn3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#ffc380"
+                android:gravity="center"
+                android:text="@string/clear_items"
+                android:onClick="@{(v) -> vm.onClickBtn(v)}"
+                />
+
+            <Space
+                android:layout_width="7dp"
+                android:layout_height="match_parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_btn1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
                 android:background="#a176c2"
                 android:gravity="center"
                 android:text="@string/add_header"
@@ -61,7 +67,7 @@
                 />
 
             <Space
-                android:layout_width="10dp"
+                android:layout_width="7dp"
                 android:layout_height="match_parent"
                 />
 
@@ -69,7 +75,7 @@
                 android:id="@+id/tv_btn2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:background="#76c2b9"
                 android:gravity="center"
                 android:text="@string/add_item"
