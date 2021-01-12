@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_sticky_headerfooter_example.R
+import com.example.recyclerview_sticky_headerfooter_example.data.local.common.ListFooter
 import com.example.recyclerview_sticky_headerfooter_example.data.local.common.ListHeader
 import com.example.recyclerview_sticky_headerfooter_example.data.local.common.ListItem
 import com.example.recyclerview_sticky_headerfooter_example.databinding.ItemListFooterBinding
@@ -27,7 +28,12 @@ class MainTabAdapter(val viewModel: MainTabViewModel) : RecyclerView.Adapter<Mai
     val _mDataSet = mDataSet
 
     fun clear() {
-        mDataSet.clear()
+        if (mDataSet.size > 0 && mDataSet[mDataSet.size-1] is ListFooter) {
+            mDataSet.clear()
+            mDataSet.add(ListFooter())
+        } else {
+            mDataSet.clear()
+        }
         notifyDataSetChanged()
     }
 
@@ -38,9 +44,18 @@ class MainTabAdapter(val viewModel: MainTabViewModel) : RecyclerView.Adapter<Mai
     }
 
     fun addItem(item: Any) {
-        mDataSet.add(item)
-//        notifyItemInserted(mDataSet.size)
-        notifyDataSetChanged()
+        if (mDataSet.size > 0 && mDataSet[mDataSet.size-1] is ListFooter) {
+            mDataSet.add(mDataSet.size-1, item)
+            notifyItemInserted(mDataSet.size-1)
+        } else {
+            mDataSet.add(item)
+            notifyItemInserted(mDataSet.size)
+        }
+    }
+
+    fun addFooter() {
+        mDataSet.add(ListFooter())
+        notifyItemInserted(mDataSet.size)
     }
 
     class ItemViewHolder(

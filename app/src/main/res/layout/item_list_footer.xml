@@ -19,17 +19,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
         android:padding="7dp"
         android:background="@color/gray"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="End Of List"
+            android:text="I'm Footer"
             android:textSize="16sp"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
