@@ -25,7 +25,13 @@ class MainTabAdapter(val viewModel: MainTabViewModel) : RecyclerView.Adapter<Mai
     }
 
     private var mDataSet = mutableListOf<Any>()
-    val _mDataSet = mDataSet
+
+    fun setItemList(_itemList: MutableList<Any>, isFooter: Boolean) {
+        mDataSet.clear()
+        mDataSet.addAll(_itemList)
+        if(isFooter) addFooter()
+        notifyDataSetChanged()
+    }
 
     fun clear() {
         if (mDataSet.size > 0 && mDataSet[mDataSet.size-1] is ListFooter) {
@@ -34,12 +40,6 @@ class MainTabAdapter(val viewModel: MainTabViewModel) : RecyclerView.Adapter<Mai
         } else {
             mDataSet.clear()
         }
-        notifyDataSetChanged()
-    }
-
-    fun setItemList(_itemList: MutableList<Any>) {
-        mDataSet.clear()
-        mDataSet.addAll(_itemList)
         notifyDataSetChanged()
     }
 

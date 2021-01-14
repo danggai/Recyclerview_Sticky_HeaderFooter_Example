@@ -57,7 +57,7 @@ class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
                     if (adapter == null)
                         adapter = MainTabAdapter(mVM)
                     (adapter as MainTabAdapter).apply {
-                        setItemList(list)
+                        setItemList(list, false)
                     }
                 }
             }

@@ -28,6 +28,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             items="@{vm._itemList}"
             viewModel="@{vm}"
+            clearItem="@{vm.lvClearItemList}"
             />
 
         <LinearLayout

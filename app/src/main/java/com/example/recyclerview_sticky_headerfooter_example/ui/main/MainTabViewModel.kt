@@ -15,6 +15,7 @@ class MainTabViewModel : ViewModel() {
 
     var lvAddItem = MutableLiveData<Any>()
     var lvSetItemList = MutableLiveData<MutableList<Any>>()
+    var lvClearItemList = MutableLiveData<Boolean>(false)
 
     private var itemList = mutableListOf<Any>()
     val _itemList = itemList
@@ -39,6 +40,7 @@ class MainTabViewModel : ViewModel() {
             }
             R.id.tv_btn3 -> {
                 Log.d("btn", "clear items")
+                lvClearItemList.value = true
                 itemList.clear()
                 itemCnt.value = 0
                 headerCnt.value = 0
