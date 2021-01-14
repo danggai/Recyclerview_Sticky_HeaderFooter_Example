@@ -50,9 +50,9 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
         val tabs: TabLayout = binding.tabs
         TabLayoutMediator(tabs, vp2) { tab, position ->
             when (position) {
-                0 -> { tab.text = "TAB 1"}
-                1 -> { tab.text = "TAB 2"}
-                2 -> { tab.text = "TAB 3"}
+                0 -> { tab.text = "Sticky Header"}
+                1 -> { tab.text = "Sticky Footer"}
+                2 -> { tab.text = "Sticky Header/Footer"}
             }
             vp2.setCurrentItem(tab.position, true)
         }.attach()
