@@ -54,14 +54,27 @@ class MainTabThirdFragment : BindingFragment<FragmentMainTabThirdBinding>()  {
     }
 
     private fun initLv() {
+        mVM.lvSetItemList.observe(viewLifecycleOwner, Observer { list ->
+            context?.let { _ ->
+                binding.rv.apply {
+                    if (adapter == null)
+                        adapter = MainTabAdapter(mVM)
+                    (adapter as MainTabAdapter).apply {
+                        setItemList(list)
+                    }
+                }
+            }
+        })
         mVM.lvAddItem.observe(viewLifecycleOwner, Observer { item ->
-            mAdapter.addItem(item)
-        })
-        mVM.lvAddHeader.observe(viewLifecycleOwner, Observer { header ->
-            mAdapter.addItem(header)
-        })
-        mVM.lvClearItems.observe(viewLifecycleOwner, Observer { boolean ->
-            if (boolean) mAdapter.clear()
+            context?.let { _ ->
+                binding.rv.apply {
+                    if (adapter == null)
+                        adapter = MainTabAdapter(mVM)
+                    (adapter as MainTabAdapter).apply {
+                        addItem(item)
+                    }
+                }
+            }
         })
     }
 }

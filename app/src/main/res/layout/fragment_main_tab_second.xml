@@ -26,6 +26,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@id/ll_bottom"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            items="@{vm._itemList}"
+            viewModel="@{vm}"
             />
 
         <LinearLayout

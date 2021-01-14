@@ -10,32 +10,35 @@ import com.example.recyclerview_sticky_headerfooter_example.data.local.common.Li
 
 class MainTabViewModel : ViewModel() {
 
-    var lvAddItem = MutableLiveData<ListItem>()
-    var lvAddHeader = MutableLiveData<ListHeader>()
-    var lvClearItems = MutableLiveData<Boolean>()
-
     var itemCnt = MutableLiveData<Int>(0)
     var headerCnt = MutableLiveData<Int>(0)
+
+    var lvAddItem = MutableLiveData<Any>()
+    var lvSetItemList = MutableLiveData<MutableList<Any>>()
+
+    private var itemList = mutableListOf<Any>()
+    val _itemList = itemList
 
     fun onClickBtn(view: View) {
         when (view.id) {
             R.id.tv_btn1 -> {
                 Log.d("btn", "add header")
-                lvAddHeader.value = ListHeader("${headerCnt.value}")
+                itemList.add(itemList.size, ListHeader("${headerCnt.value}"))
+                lvSetItemList.value = itemList
                 headerCnt.value = headerCnt.value?.plus(1)
             }
             R.id.tv_btn2 -> {
                 Log.d("btn", "add item")
-                lvAddItem.value = ListItem("${itemCnt.value}","010-0000-0000","zz","zz")
+                itemList.add(itemList.size, ListItem("${itemCnt.value}","010-0000-0000","zz","zz"))
+                lvSetItemList.value = itemList
                 itemCnt.value = itemCnt.value?.plus(1)
             }
             R.id.tv_btn3 -> {
                 Log.d("btn", "clear items")
+                itemList.clear()
                 itemCnt.value = 0
                 headerCnt.value = 0
-                lvClearItems.value = true
             }
         }
     }
-
 }
