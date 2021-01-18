@@ -3,6 +3,8 @@ package com.example.recyclerview_sticky_headerfooter_example.util
 import android.graphics.Rect
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.marginBottom
+import androidx.core.view.marginTop
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 
@@ -39,7 +41,7 @@ class StickyFooterItemDecoration : ItemDecoration() {
             fixLayoutSize(footerView, parent)
             footerHeight = footerView.height
         }
-        footerHeight = footerHeight + footerView.paddingBottom + footerView.paddingTop
+        footerHeight += footerView.marginBottom + footerView.marginTop
         return totalHeight + footerHeight
     }
 
