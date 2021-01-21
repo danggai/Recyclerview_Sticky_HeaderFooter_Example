@@ -28,24 +28,36 @@ class MainTabViewModel : ViewModel() {
         when (view.id) {
             R.id.tv_btn1 -> {
                 Log.d("btn", "add header")
-                itemList.add(itemList.size, ListHeader("${headerCnt.value}"))
-                lvSetItemList.value = itemList
-                headerCnt.value = headerCnt.value?.plus(1)
+                addHeader()
             }
             R.id.tv_btn2 -> {
                 Log.d("btn", "add item")
-                itemList.add(itemList.size, ListItem("${itemCnt.value}","010-0000-0000","zz","zz"))
-                lvSetItemList.value = itemList
-                itemCnt.value = itemCnt.value?.plus(1)
+                addItem()
             }
             R.id.tv_btn3 -> {
                 Log.d("btn", "clear items")
-                lvClearItemList.value = true
-                itemList.clear()
-                itemCnt.value = 0
-                headerCnt.value = 0
+                clearItemList()
             }
         }
+    }
+
+    private fun addHeader() {
+        itemList.add(itemList.size, ListHeader("${headerCnt.value}"))
+        lvSetItemList.value = itemList
+        headerCnt.value = headerCnt.value?.plus(1)
+    }
+
+    private fun addItem() {
+        itemList.add(itemList.size, ListItem("${itemCnt.value}","010-0000-0000","zz","zz"))
+        lvSetItemList.value = itemList
+        itemCnt.value = itemCnt.value?.plus(1)
+    }
+
+    private fun clearItemList() {
+        lvClearItemList.value = true
+        itemList.clear()
+        itemCnt.value = 0
+        headerCnt.value = 0
     }
 
     private fun initItemList() {
