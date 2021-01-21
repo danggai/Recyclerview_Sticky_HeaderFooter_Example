@@ -45,9 +45,8 @@ class MainTabThirdFragment : BindingFragment<FragmentMainTabThirdBinding>()  {
         binding.rv.addItemDecoration(
                 StickyHeaderItemDecoration(
                         binding.rv,
-                        { mAdapter.isHeader(it) },
-                        { /*onClick Event*/ }
-                )
+                        false,
+                ) { mAdapter.isHeader(it) }
         )
         binding.rv.addItemDecoration(StickyFooterItemDecoration())
         mAdapter.addFooter()

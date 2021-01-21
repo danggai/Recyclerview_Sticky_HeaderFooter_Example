@@ -44,9 +44,8 @@ class MainTabFirstFragment : BindingFragment<FragmentMainTabFirstBinding>() {
         binding.rv.addItemDecoration(
                 StickyHeaderItemDecoration(
                         binding.rv,
-                        { mAdapter.isHeader(it) },
-                        { /*onClick Event*/ }
-                )
+                        false,
+                ) { mAdapter.isHeader(it) }
         )
     }
 
