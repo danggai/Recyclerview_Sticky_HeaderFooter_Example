@@ -57,5 +57,5 @@ Todo
 ## Sources
 
 - [Person Icon](https://icons8.com/icons/set/person)
-- [Sticky Header Item Decoration](https://jhpop.tistory.com/152)
+- [Sticky Header Item Decoration](https://github.com/zendesk/zopim-sticky-headers-recyclerview/blob/master/sample/src/main/java/com/timehop/stickyheadersrecyclerview/sample/DividerDecoration.java)
 - [Sticky Footer Item Decoration](https://stackoverflow.com/questions/33890709/how-implement-sticky-footer-in-recyclerview)
