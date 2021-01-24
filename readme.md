@@ -48,9 +48,7 @@ RecyclerView에 Sticky Header, Footer을 지원하는 리스트 드래그 예제
 
 ## Preview
 
-Todo
-
-
+![preview](https://github.com/danggai/Recyclerview_Sticky_HeaderFooter_Example/blob/master/preview.gif)
 
 
 
