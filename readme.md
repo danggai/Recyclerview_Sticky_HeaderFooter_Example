@@ -10,24 +10,30 @@ RecyclerView에 Sticky Header, Footer을 지원하는 리스트 드래그 예제
 
 
 
-## LiveData
+## [LiveData](https://developer.android.com/topic/libraries/architecture/livedata?hl=ko)
 
--  UI와 ViewModel 내 Data의 효율적인 동기화를 위해 사용.
+- Data의 변경을 Observe할 수 있는 Data Holder 클래스
+  - 일반적인 Observable와는 다르게, 안드로이드 생명주기(LifeCycle)를 갖는다.
+  - ViewModel 내의 Data와 UI간의 효율적인 동기화
+  - Activity와 함께 destroy되기에, Memory Leak이나 추가적인 Handling에 대한 관리 필요 감소.
 
 
 
 
 
-## Koin
+## [Koin](https://insert-koin.io/)
 
 - DI 주입 툴
+  - 간단하고, 직관적인 사용 방법이 있어 채택.
+  - Unit Test가 용이함.
+  - 객체 간의 의존성을 줄이거나 없앨 수 있음.
 
 
 
 
 
 
-## Databinding
+## [Databinding](https://developer.android.com/topic/libraries/data-binding?hl=ko)
 
 - MVVM Model 환경에서 View와 Viewmodel간의 데이터 구성요소 결합을 지원함.
 - findViewByid 를 사용하지 않아도 되며, 코드를 단순하고 직관적으로 유지 가능.
@@ -36,7 +42,7 @@ RecyclerView에 Sticky Header, Footer을 지원하는 리스트 드래그 예제
 
 
 
-## ViewPager2 
+## [ViewPager2](https://developer.android.com/jetpack/androidx/releases/viewpager2?hl=ko) 
 
 - RecyclerView와 동일한 Adapter 공유 가능
 - 수직 스크롤러 지원
